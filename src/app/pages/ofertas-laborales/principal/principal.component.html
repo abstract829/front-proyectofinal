@@ -1,0 +1,67 @@
+<div class="container main">
+    <div class="filtros">
+        <h3>Filtrar por:</h3>
+        <div class="search">
+            <div class="input-group mb-3 mt-3">
+                <input type="text" class="form-control" placeholder="Buscar Ofertas Laborales" [(ngModel)]="toBuscar">
+                <span class="input-group-text" style="cursor:pointer;" (click)="onBuscar()">Buscar</span>
+            </div>
+        </div>
+        <div class="jornada ">
+            <h4>Jornada</h4>
+            <div class="container">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" (change)="toggleJornada(1)" checked>
+                    <label class="form-check-label" >
+                      Part Time
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" (change)="toggleJornada(2)" checked>
+                    <label class="form-check-label" >
+                      Full time
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" (change)="toggleJornada(3)" checked>
+                    <label class="form-check-label" >
+                      Por horas
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="salario mt-3">
+            <h4>Salario</h4>
+            <div class="container sal">
+
+    
+                <label for="desde">Desde</label>
+                <input type="text" class="form-control" placeholder="0" [(ngModel)]="min">
+
+                <label for="hasta">Hasta</label>
+                <input type="text" class="form-control" placeholder="100.000" [(ngModel)]="max">
+
+            </div>
+        </div>
+        
+    </div>
+    <div class="ofertas">
+        <div>
+            
+            <div    *ngIf="user.tipo_user == 2"
+                    class="addoferta">
+                <a routerLink="/ofertas/agregar">Agregar oferta</a>
+            </div>
+            <div *ngFor="let oferta of ofertas | paginacionOfertas:page:toBuscar:min:max">
+                <app-oferta     
+                            [oferta]="oferta"></app-oferta>
+            </div>
+        </div>
+        <div>
+            <button class="butn btn btn-primary" (click)="backPage()">Anterior</button>
+            <button  
+                    class="butn btn btn-primary" (click)="nextPage()">Siguiente</button>
+        </div>
+    </div>
+    
+</div>

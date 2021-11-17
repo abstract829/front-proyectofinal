@@ -1,0 +1,55 @@
+@use '../../../../styles.scss' as *;
+.main{
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    .info, .empresa{
+        text-align: center;
+        background: $secundario;
+        margin-right: 50px;
+        border-radius: 10px;
+        padding: 15px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .empresa{
+        height: 30%;
+    }
+    .title{
+        margin-top: 15px;
+        h3{
+            font-weight: 500;
+            font-size: 36px;
+        }
+    }
+    .desc{
+        margin-top: 50px;
+        border-radius: 10px;
+        padding: 40px;
+    }
+    .foot{
+        margin-top: 50px;
+        width: 50%;
+        padding: 20px;
+        margin-bottom: 100px;
+        border-radius: 5px;
+        border: 1px solid black
+    }
+    img{
+        margin-top: 25px;
+        height: 100px;
+        margin-bottom: 25px;
+    }
+    .btn-del{
+        margin-top: 30px;
+        background: $principal;
+        color: white;
+    }
+
+}

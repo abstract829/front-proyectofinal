@@ -1,0 +1,33 @@
+@use '../../../styles.scss' as *;
+
+.auth{
+    background: $principal;
+    color: white;
+    max-width: 500px;
+    margin-top: 10%;
+    padding: 20px;
+    border-radius: 5px;
+    .register{
+        float: right;
+    }
+    .to{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        margin-bottom: 20px;
+        .log, .reg{
+            cursor: pointer;
+            padding: 5px;
+
+        }
+    }
+    .active{
+        background: $principal;
+        color: $secundario;
+        border-radius: 5px;
+    }
+    .btn-auth{
+        background: $secundario;
+        color: black;
+    }
+}

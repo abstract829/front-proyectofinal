@@ -1,0 +1,32 @@
+@use '../../../styles.scss' as *;
+header{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+
+    background: $principal;
+    color: white;
+    .logoapp, .buscador{
+        padding: 10px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        li{
+            margin-top: 10px;
+            list-style: none;
+            margin-right: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+    a{
+        color: white;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+}

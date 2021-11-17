@@ -1,0 +1,61 @@
+<div class="main mt-3">
+    <div class="perfilcontainer">
+        <div class="perfil">
+            <img src="assets/user.jpg" alt="">
+            <hr>
+            <p>{{user.name}}</p>
+            <p>{{user.email}}</p>
+            <p>{{getTipo()}}</p>
+        </div>
+    </div>
+    <div class="info">
+        <div class="title">
+            <h3>Informacion</h3>
+            <button *ngIf="!toggleForm"
+                    class="btn btn-primary" (click)="onEditar()">
+            Editar
+            </button>
+            <button *ngIf="toggleForm"
+                    class="btn btn-primary" (click)="onGuardarInfo()">
+            Guardar
+            </button>            
+        </div>
+        <form [formGroup]="userForm">
+            <div class="name">
+                <label for="name">Nombre</label>
+                <span *ngIf="!toggleForm">{{user.name}}</span>
+                <input  *ngIf="toggleForm"
+                        class="form-control" type="text" formControlName="name">
+            </div>
+            <div class="email">
+                <label for="email">Email</label>
+                <span *ngIf="!toggleForm">{{user.email}}</span>
+                <input  *ngIf="toggleForm"
+                        class="form-control" type="text" formControlName="email">
+            </div>
+            <div class="password">
+                <button *ngIf="!togglePassword"
+                        class="btn btn-primary" (click)="onPassword()">
+                    Cambiar password
+                </button>
+                <button *ngIf="togglePassword"
+                        class="btn btn-primary" (click)="onGuardarPass()">
+                    Guardar
+                </button>
+                <div class="antigua" *ngIf="togglePassword">
+                    <label for="antigua">Password actual</label>
+                    <input type="password" class="form-control" formControlName="password">
+                </div>
+                <div class="nueva" *ngIf="togglePassword">
+                    <label for="nueva">Password nueva</label>
+                    <input type="password" class="form-control" formControlName="nuevapassword">
+                </div>
+            </div>
+        </form>
+        
+
+
+    </div>
+    
+</div>
+

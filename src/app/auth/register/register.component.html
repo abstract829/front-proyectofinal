@@ -1,0 +1,46 @@
+<div class="container auth">
+  <div class="to">
+    <div class="log" routerLink="/auth/login"
+    routerLinkActive ="active">
+      Iniciar sesion
+    </div>
+    <div class="reg" routerLink="/auth/register"
+    routerLinkActive ="active">
+      Registrarme
+    </div>
+  </div>
+  <hr>
+    <form (submit)="onRegister($event)" [formGroup]="miForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">* Full Name</label>
+            <input type="text" class="form-control" formControlName="name">
+          </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">* Email address</label>
+          <input type="email" class="form-control" formControlName="email"
+          (change)="validar('email')">
+          <small style="color:yellow" class="email_error hide">El email no es valido</small>
+          <small style="color:yellow" class="email_existe hide">El email ya esta registrado</small>
+       
+        </div>
+        <div class="mb-3">
+          <label for="perfil" class="form-label">* Tipo Perfil</label>
+          <select class="form-select" formControlName="tipo_user" >
+            <option value="1">Egresado</option>
+            <option value="2">Empresario</option>
+            <option value="3">Estudiante</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">* Password</label>
+          <input type="password" class="form-control" formControlName="password"
+          (change)="validar('password')">
+          <small style="color:yellow" class="password_error hide">Debe contener al menos 6 digitos</small>
+
+        </div>
+        <div class="butons">
+          <button type="submit" class="btn btn-primary btn-auth">Registrarme</button>
+        </div>
+    </form>
+</div>
+

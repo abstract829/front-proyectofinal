@@ -1,0 +1,26 @@
+<div class="container auth">
+    <div class="to">
+      <div class="log" routerLink="/auth/login"
+      routerLinkActive ="active">
+        Iniciar sesion
+      </div>
+      <div class="reg" routerLink="/auth/register"
+            routerLinkActive ="active">
+        Registrarme
+      </div>
+    </div>
+    <hr>
+    <form (submit)="onLogin($event)" [formGroup]="miForm">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" formControlName="email" placeholder="email@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password">
+        </div>
+        <div class="butons">
+          <button type="submit" class="btn btn-primary btn-auth" (click)="onLogin($event)">Iniciar sesion</button>
+        </div>    </form>
+</div>
+

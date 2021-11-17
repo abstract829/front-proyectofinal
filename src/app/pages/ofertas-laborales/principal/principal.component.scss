@@ -1,0 +1,48 @@
+
+@use '../../../../styles.scss' as *;
+.main{
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 100vh;
+    .filtros{
+        padding: 30px;
+        background: $secundario;
+        border-radius: 8px;
+        height: 85%;
+        .salario, .jornada, .search{
+            margin-bottom: 50px;
+        }
+    }
+    .ofertas{
+        padding: 15px;
+        text-align: center;
+        margin-left: 50px;
+
+        a{
+            float: right;
+            text-decoration: none;
+            background: $principal;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+            margin-bottom: 10px;
+            font-size: 16px;
+            border : .1px solid black;
+        }
+    }
+    .sal{
+        width: 50%;
+        float: left;
+    }
+    .butn{
+        background: $principal;
+        border-radius: 5px;
+        padding: 10px;
+        color: white;
+        font-size: 16px;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+}

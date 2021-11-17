@@ -1,0 +1,15 @@
+
+
+<div *ngIf="((oferta.tipo_jornada == 1 && partTime) ||
+            (oferta.tipo_jornada == 2 && fullTime) ||
+            (oferta.tipo_jornada == 3 && horas)) "
+    class="card mb-3" (click)="onClickOferta()">
+    <div class="card-body">
+      <h5 class="card-title">{{oferta!.title}}</h5>
+      <p class="card-text">{{oferta!.empresa}} </p>
+      <p>Publicado el {{oferta!.fecha}}</p>
+    </div>
+    <div class="img-empresa">
+        <img src="https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg" alt="Logo-empresa">
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div class="main mt-3">
+    <div class="info">
+        <div class="title">
+            <h3>{{oferta.title}}</h3>
+        </div>
+        <div class="desc">
+            <p>{{oferta.desc}}</p>
+        </div>
+        <div class="foot">
+            <strong>Salario : {{oferta.salario_min | currency:'CLP'}}</strong> - <strong>{{oferta.salario_max | currency:'CLP'}}</strong>
+            <p>Jornada : {{getJornada(oferta)}}</p>
+            <p>Enviar cv a : {{oferta.email}}</p>
+        </div>
+        <p>Publicado en {{oferta.fecha}}</p>
+    </div>
+    <div class="empresacontainer">
+        <div class="empresa">
+            <h4>{{oferta.empresa}}</h4>
+            <img src="{{oferta.img}}" alt="">
+            <p>{{oferta.email}}</p>
+        </div>
+        
+
+        <div    *ngIf="oferta.creado_por == user.tipo_user"
+                class="borrar">
+                <button class="btn btn-primary btn-del" (click)="onBorrar()">Borrar oferta</button>
+        </div>
+    </div>
+</div>

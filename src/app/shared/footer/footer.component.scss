@@ -1,0 +1,8 @@
+@use '../../../styles.scss' as *;
+footer{
+    background: $principal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}

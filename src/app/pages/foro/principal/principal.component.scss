@@ -1,0 +1,11 @@
+@use '../../../../styles.scss' as *;
+
+.main{
+    padding: 20px;
+    display: grid;
+    justify-items: center;
+    grid-template-rows:1fr 1fr;
+    .buscador{
+        width: 40%;
+    }
+}
