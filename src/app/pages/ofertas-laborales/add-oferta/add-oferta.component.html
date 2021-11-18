@@ -1,41 +1,43 @@
     <form [formGroup]="ofertaForm" (submit)="onSubmit()">
+            <div class="container">
+                <label for="desde">Titulo de la oferta</label>
+                <input type="text" class="form-control" formControlName="title" placeholder="Se busca...">
 
-        <div class="container">
-            <label for="desde">Titulo de la oferta</label>
-            <input type="text" class="form-control" formControlName="title">
+                <label for="desde">Empresa que la ofrece</label>
+                <input type="textarea" class="form-control" formControlName="empresa" placeholder="ExampleSPA">
 
-            <label for="desde">Empresa que la ofrece</label>
-            <input type="textarea" class="form-control" formControlName="empresa">
+                <label for="desde">E-mail a recibir CV's</label>
+                <input type="textarea" class="form-control" formControlName="mail" placeholder="email@example.com">
 
-            <label for="desde">E-mail a recibir CV's</label>
-            <input type="textarea" class="form-control" formControlName="mail">
+                <label for="select">Tipo de jornada</label>
+                <select class="form-select" formControlName="jornada">
+                    <option value="1">Full time</option>
+                    <option value="1">Part Time</option>
+                    <option value="2">Por horas</option>
+                </select>
+                <label for="categoria">Categoria</label>
+                <select class="form-select" formControlName="categoria">
+                    <option value="1">Tecnologia</option>
+                    <option value="1">Diseno</option>
+                    <option value="2">Marketing</option>
+                </select>
 
-            <label for="select">Tipo de jornada</label>
-            <select class="form-select" formControlName="jornada">
-                <option value="1">Full time</option>
-                <option value="1">Part Time</option>
-                <option value="2">Por horas</option>
-            </select>
-            <label for="categoria">Categoria</label>
-            <select class="form-select" formControlName="categoria">
-                <option value="1">Tecnologia</option>
-                <option value="1">Diseno</option>
-                <option value="2">Marketing</option>
-            </select>
-
-            <label for="desde">Salario minimo a recibir</label>
-            <input type="number" class="form-control" formControlName="min">
+                <label for="desde">Salario minimo a recibir</label>
+                <input type="number" class="form-control" formControlName="min" placeholder="0">
 
 
-            <label for="desde">Salario maximo a recibir</label>
-            <input type="number" class="form-control" formControlName="max">
-        
-            <label for="desde">Descripcion de la oferta</label>
-            <textarea class="form-control"  rows="5" formControlName="desc"></textarea>
+                <label for="desde">Salario maximo a recibir</label>
+                <input type="number" class="form-control" formControlName="max" placeholder="9.999.999">
+                
+                <label for="foto">Logo empresa</label>
+                <input type="file" (change)="capturar($event)" class="form-control">
+                
+                <label for="desde">Descripcion de la oferta</label>
+                <textarea class="form-control"  rows="5" formControlName="desc" placeholder="Empresa en busca de..."></textarea>
 
-            <button type="submit" class="btn btn-primary">Agregar</button>
-
-        </div>
+                <button type="submit" class="btn btn-primary">Agregar</button>
+            </div>
+            
 
         
 

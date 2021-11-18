@@ -26,8 +26,6 @@ export class AuthService {
   renovarToken():any{
     const headers = new HttpHeaders()
     .set('x-token', localStorage.getItem('token')!)
-    
-
     return this.http.get(`${this.url}/auth/renew`, {headers})
     .pipe(
       map((resp: any) =>{
@@ -36,5 +34,11 @@ export class AuthService {
       }),
       catchError( err => of(false))
     )
+  }
+  agregarFoto(id: number, img: string){
+    return this.http.post(`${this.url}/auth/addfoto`, { img, id })
+  }
+  getUserById(id:number){
+    return this.http.get(`${this.url}/auth/getbyid/${id}`)
   }
 }

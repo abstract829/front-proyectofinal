@@ -3,9 +3,12 @@
 .main{
     padding: 20px;
     display: grid;
-    justify-items: center;
-    grid-template-rows:1fr 1fr;
+    grid-gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
     .buscador{
-        width: 40%;
+        width: 80%;
     }
+    
 }

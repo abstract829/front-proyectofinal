@@ -1,6 +1,8 @@
 @use '../../../../styles.scss' as *;
+
+
 .container{
-    width: 30%;
+    width: 40%;
     background: $secundario;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -16,6 +18,5 @@
         background: $principal;
     }
 }
-form{
-    height: 100vh;
-}
+
+

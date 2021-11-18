@@ -15,7 +15,7 @@
         padding: 15px;
         display: flex;
         flex-direction: column;
-        height: 50%;
+        height: 60%;
        
     }
     .perfil{
@@ -24,7 +24,8 @@
         flex-direction: column;
         align-items: center;
         img{
-            margin-top: 50px
+            margin-top: 20px;
+            width: 250px;
         }
     }
     .title{
@@ -41,13 +42,24 @@
         }
         
     }
-    .name, .email{
+    .name, .email, .foto{
         display: grid;
         grid-template-columns: 1fr 2fr 5fr 2fr;
         margin-bottom: 20px;
         input{
             width: 95%;
             
+        }
+    }
+    .foto{
+        label{
+            grid-column: 2/3;
+        }
+        input{
+            grid-column: 3/4;
+        }
+        button{
+            grid-column: 4/5;
         }
     }
     .name, .email{
@@ -74,10 +86,15 @@
             }
         }
     }
-
     .btn{
         width: 60%;
         background: $principal;
+    }
+    .btnspw{
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        justify-items: center;
+        align-items: center;
     }
     
 

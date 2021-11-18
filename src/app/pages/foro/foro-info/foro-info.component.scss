@@ -1,0 +1,27 @@
+@use '../../../../styles.scss' as *;
+
+.main{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    margin-bottom: 50px;
+    .info{
+        grid-column: 2/3;
+        background: $secundario;
+        border-radius: 5px;
+        padding: 30px;
+    }
+    .user{
+        grid-column: 1/2;
+        background: $secundario;
+        border-radius: 5px;
+        padding: 30px;
+        height: 80%;
+        text-align: center;
+    }
+    .comentarios{
+        grid-column: 1/3;
+    }
+}

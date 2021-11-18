@@ -31,13 +31,10 @@ export class OfertaInfoComponent implements OnInit {
   ngOnInit(): void {
     
     this.route.params.subscribe(({id}) => {
-      console.log(id)
       this.ofertasService.getOfertaById(id).subscribe(resp => {
         if(resp.ok){
           this.oferta = resp.ofertas![0]
-          console.log(this.oferta)
         }else{
-          console.log(resp.msg)
         }
       })
     })

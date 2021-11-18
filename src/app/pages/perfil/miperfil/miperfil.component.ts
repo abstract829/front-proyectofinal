@@ -17,12 +17,13 @@ export class MiperfilComponent implements OnInit {
     if(this.user.tipo_user == 3) return 'Estudiante'
     return null
   }
-    userForm : FormGroup = this.fb.group({
-    name: [this.user.name, [Validators.required]],
-    email: [this.user.email , [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
-    password: [],
-    nuevapassword: [, Validators.minLength(6)]
+  userForm : FormGroup = this.fb.group({
+  name: [this.user.name, [Validators.required]],
+  email: [this.user.email , [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]],
+  password: [],
+  nuevapassword: [, Validators.minLength(6)]
   })
+  img : any
   toggleForm: boolean = false
   togglePassword: boolean = false
   constructor(private auth: AuthService,
@@ -68,7 +69,6 @@ export class MiperfilComponent implements OnInit {
     }
   }
   async onGuardarPass(){
-    
     const { password, nuevapassword } = this.userForm.value
     if(password === this.user.password){
       if(nuevapassword === null || nuevapassword.length < 6){
@@ -108,8 +108,45 @@ export class MiperfilComponent implements OnInit {
         'error'
       ))
     }
-
-    
   }
-
+  getBase64 = (file:any) => new Promise((resolve,reject)=>{
+    var reader = new FileReader();
+    let resp
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+      resolve({
+        img: reader.result
+      })
+    };
+    reader.onerror = function (error) {
+      reject({
+        error
+      })
+    };
+  })
+  async capturar(e : any){
+    await this.getBase64(e.target.files[0]).then((res:any) => {
+      if(res.img){
+        this.img = res.img
+      }
+    })
+  }
+  guardarFoto(){
+    if(this.img){
+      this.auth.agregarFoto(this.user.id!, this.img).subscribe(resp => {
+        this.auth.user.img = this.img
+        Swal.fire(
+          'Listo!',
+          'Foto actualizada con exito!',
+          'success'
+        )
+      })
+    }else{
+        Swal.fire(
+          'Error!',
+          'No has seleccionado ninguna imagen!',
+          'error'
+        )
+    }
+  }
 }

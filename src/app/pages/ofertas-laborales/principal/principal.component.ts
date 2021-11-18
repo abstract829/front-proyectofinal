@@ -22,14 +22,8 @@ export class PrincipalComponent implements OnInit{
   
   ngOnInit(): void {
     this.ofertasService.getOfertas().subscribe( resp => {
-      console.log(resp.ofertas)
       this.ofertas = resp.ofertas!
       })
-      console.log(this.ofertas)
-  }
-  
-  onBuscar(){
-    //TO DO
   }
   toggleJornada(id:number){
     this.ofertasService.toggleJornada(id)

@@ -27,7 +27,7 @@ export class OfertasService {
     return this.http.post(`${this.url}/ofertas/agregar`, oferta)
   }
   delOferta(id:number){
-    return this.http.delete(`${this.url}/ofertas/eliminar/${id}`)
+    return this.http.delete(`${this.url}/ofertas/eliminar/${ id }`)
   }
 
   toggleJornada(id:number){

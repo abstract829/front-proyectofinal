@@ -1,0 +1,13 @@
+@use '../../../../styles.scss' as *;
+.card{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 5px;
+    width: 70%;
+    height: 150px;
+    cursor: pointer;
+    background: $secundario;
+    .card-body{
+        text-align: left;
+    }
+}

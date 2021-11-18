@@ -1,8 +1,8 @@
 <div class="main mt-3">
     <div class="perfilcontainer">
         <div class="perfil">
-            <img src="assets/user.jpg" alt="">
-            <hr>
+            <img *ngIf="user.img" src="{{user.img}}" alt="img">
+            <img *ngIf="!user.img" src="assets/user.jpg" alt="img">
             <p>{{user.name}}</p>
             <p>{{user.email}}</p>
             <p>{{getTipo()}}</p>
@@ -33,15 +33,27 @@
                 <input  *ngIf="toggleForm"
                         class="form-control" type="text" formControlName="email">
             </div>
+            <div class="foto">
+                <label for="foto">Cambiar foto</label>
+                <input type="file" (change)="capturar($event)" class="form-control">
+                <button class="btn btn-primary" (click)="guardarFoto()">Guardar</button>
+            </div>
+
             <div class="password">
                 <button *ngIf="!togglePassword"
                         class="btn btn-primary" (click)="onPassword()">
                     Cambiar password
                 </button>
-                <button *ngIf="togglePassword"
-                        class="btn btn-primary" (click)="onGuardarPass()">
+                <div class="btnspw">
+                    <button *ngIf="togglePassword"
+                            class="btn btn-primary" (click)="onGuardarPass()">
                     Guardar
-                </button>
+                    </button>
+                    <button *ngIf="togglePassword" class="btn btn-primary"
+                     (click)="onPassword()">Cancelar</button>
+                </div>
+                
+
                 <div class="antigua" *ngIf="togglePassword">
                     <label for="antigua">Password actual</label>
                     <input type="password" class="form-control" formControlName="password">
