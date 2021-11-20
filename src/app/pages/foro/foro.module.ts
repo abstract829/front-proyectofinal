@@ -6,6 +6,9 @@ import { PrincipalComponent } from './principal/principal.component';
 import { ForoComponent } from './foro/foro.component';
 import { ForoInfoComponent } from './foro-info/foro-info.component';
 import { ComentarioComponent } from './comentario/comentario.component';
+import { AddForoComponent } from './add-foro/add-foro.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PaginacionForoPipe } from '../../pipes/paginacion-foro.pipe';
 
 
 @NgModule({
@@ -13,11 +16,15 @@ import { ComentarioComponent } from './comentario/comentario.component';
     PrincipalComponent,
     ForoComponent,
     ForoInfoComponent,
-    ComentarioComponent
+    ComentarioComponent,
+    AddForoComponent,
+    PaginacionForoPipe
   ],
   imports: [
     CommonModule,
-    ForoRoutingModule
+    ForoRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ForoModule { }

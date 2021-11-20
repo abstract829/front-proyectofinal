@@ -18,10 +18,12 @@
         background: $secundario;
         border-radius: 5px;
         padding: 30px;
-        height: 80%;
         text-align: center;
     }
-    .comentarios{
+    .comentarios, .addcomentario{
         grid-column: 1/3;
+    }
+    .btn{
+        background: $principal;
     }
 }

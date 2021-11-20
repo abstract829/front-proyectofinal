@@ -4,6 +4,10 @@
     <p>{{comentario!.comentario}}</p>
     <p class="mt-5">Comentado por : {{user.name}}</p>
     </div>
+    <div>
+        <button *ngIf="comentario.iduser == logedUser.id"
+                class="btn btn-primary mt-5" (click)="delComentario()">Borrar</button>
+    </div>
 </div>
 
 

@@ -3,9 +3,13 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap: 5px;
-    height: 150px;
     background: $secundario;
     .card-body{
         text-align: left;
+    }
+    .btn{
+        background: $principal;
+        float: right;
+        margin-right: 10px;
     }
 }

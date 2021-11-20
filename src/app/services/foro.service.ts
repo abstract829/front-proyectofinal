@@ -4,6 +4,8 @@ import { environment } from 'src/environments/environment';
 import { ForoResponse } from '../interfaces/ForoResponse.interface';
 import { Observable } from 'rxjs';
 import { ComentarioResponse } from '../interfaces/ComentarioResponse.interface';
+import { Comentario } from '../interfaces/Comentario.interface';
+import { Foro } from '../interfaces/Foro.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +23,17 @@ export class ForoService {
   }
   getComentariosByForoId(id:number): Observable<ComentarioResponse>{
     return this.http.get<ComentarioResponse>(`${this.url}/foro/getcomentarios/${id}`)
+  }
+  addComentario(send: any){
+    return this.http.post(`${this.url}/foro/addcomentario/`, send)
+  }
+  delComentario(send: any){
+    return this.http.post(`${this.url}/foro/delcomentario/`, send)
+  }
+  addForo(foro : Foro){
+    return this.http.post(`${this.url}/foro/addforo/`, foro)
+  }
+  delForo(id: number){
+    return this.http.delete(`${this.url}/foro/delforo/${id}`)
   }
 }

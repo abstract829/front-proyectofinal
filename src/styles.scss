@@ -1,3 +1,6 @@
+$principal : linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,119,250,1) 0%, rgba(89,100,241,1) 50%, rgba(51,103,244,0.9444152661064426) 100%);
+$secundario : linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(240,240,240,1) 0%, rgba(228,225,225,1) 50%, rgba(236,236,236,0.9444152661064426) 100%);
+
 body{
     margin: 0 auto;
     font-family: Helvetica;
@@ -6,5 +9,6 @@ body{
 .hide{
     display: none;
 }
-$principal : linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,119,250,1) 0%, rgba(89,100,241,1) 50%, rgba(51,103,244,0.9444152661064426) 100%);
-$secundario : linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(240,240,240,1) 0%, rgba(228,225,225,1) 50%, rgba(236,236,236,0.9444152661064426) 100%);
+.btn{
+    background: $principal;
+}

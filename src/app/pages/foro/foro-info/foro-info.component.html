@@ -15,10 +15,17 @@
             <p>{{foro.desc}}</p>
         </div>
         <p>Publicado en {{foro.fecha}}</p>
+        <button *ngIf="logedUser.id == foro.creado_por"
+                class="btn btn-primary" (click)="delForo()">Eliminar foro</button>
     </div>
     <div class="comentarios">
         <h3>Comentarios</h3>
         <app-comentario *ngFor="let comentario of comentarios" [comentario]="comentario"></app-comentario>
+    </div>
+    <div class="addcomentario">
+        <h4>Agrega un comentario</h4>
+        <textarea class="form-control"  rows="5" [(ngModel)]="toComentar"></textarea>
+        <button class="btn btn-primary mt-3" (click)="addComentario()">Comentar</button>
     </div>
 </div>
 

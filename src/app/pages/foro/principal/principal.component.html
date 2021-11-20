@@ -2,10 +2,22 @@
     <div class="buscador">
         <div class="input-group">
             <span class="input-group-text">Buscar</span>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control" [(ngModel)]="toBuscar">
+        </div>
+        <div    *ngIf="user.tipo_user != 2"
+                class="addforo">
+            <button routerLink = "/foro/agregar"
+                    class="btn btn-primary">Crear foro</button>
         </div>
     </div>
-    <div class="foro">
-        <app-foro *ngFor="let foro of foros" [foro]="foro"></app-foro>
+    <div class="foro" >
+        <div *ngFor="let foro of foros | paginacionForo:page:toBuscar">
+            <app-foro  [foro]="foro"></app-foro>
+        </div>
+    </div>
+    <div class="butons">
+        <button class="btn btn-primary" (click)="backPage()">Anterior</button>
+        <button  
+                class="btn btn-primary" (click)="nextPage()">Siguiente</button>
     </div>
 </div>

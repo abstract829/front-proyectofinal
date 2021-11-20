@@ -1,0 +1,18 @@
+<div class="container">
+    <form [formGroup]="foroForm">
+        <div class="title">
+            <label for="title">Titulo</label>
+            <input type="text" class="form-control" formControlName="title">
+        </div>
+        
+        <div class="desc">
+            <label for="desc">Descripcion</label>
+            <textarea rows="5" class="form-control" formControlName="desc"></textarea>
+        </div>
+
+        <div class="add">
+            <button (click)="onCrear()" class="btn btn-primary">Crear foro</button>
+        </div>
+    </form>
+    
+</div>

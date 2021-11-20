@@ -4,6 +4,7 @@ import { MainComponent } from '../main/main.component';
 import { OfertaInfoComponent } from './oferta-info/oferta-info.component';
 import { PrincipalComponent } from './principal/principal.component';
 import { AddOfertaComponent } from './add-oferta/add-oferta.component';
+import { User2Guard } from '../../guards/user2.guard';
 
 const routes: Routes = [
   {
@@ -12,7 +13,9 @@ const routes: Routes = [
     children:[
       {path: 'busqueda', component: PrincipalComponent},
       {path: 'info/:id', component: OfertaInfoComponent},
-      {path: 'agregar', component: AddOfertaComponent},
+      {path: 'agregar', component: AddOfertaComponent,
+      canLoad: [User2Guard], canActivate: [User2Guard]
+      },
       {path: '**', redirectTo: 'busqueda'}
     ]
   }

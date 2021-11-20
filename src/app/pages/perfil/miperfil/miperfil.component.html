@@ -1,9 +1,9 @@
 <div class="main mt-3">
     <div class="perfilcontainer">
         <div class="perfil">
+            <p>{{user.name}}</p>
             <img *ngIf="user.img" src="{{user.img}}" alt="img">
             <img *ngIf="!user.img" src="assets/user.jpg" alt="img">
-            <p>{{user.name}}</p>
             <p>{{user.email}}</p>
             <p>{{getTipo()}}</p>
         </div>
