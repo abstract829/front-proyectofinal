@@ -9,7 +9,7 @@
         padding: 30px;
         background: $secundario;
         border-radius: 8px;
-        height: 85%;
+        height: 100%;
         .salario, .jornada, .search{
             margin-bottom: 50px;
         }
@@ -32,8 +32,15 @@
         }
     }
     .sal{
-        width: 50%;
+        width: 80%;
         float: left;
+        margin-bottom: 50px;
+    }
+    .categoria{
+        select{
+            width: 80%;
+        }
+        
     }
     .butn{
         background: $principal;

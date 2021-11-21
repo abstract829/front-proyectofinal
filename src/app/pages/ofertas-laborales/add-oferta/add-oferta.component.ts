@@ -63,6 +63,8 @@ export class AddOfertaComponent implements OnInit {
               'success'
             ))
             this.router.navigateByUrl('/ofertas/busqueda')
+          }else{
+            console.log(resp)
           }
         })
       }else{

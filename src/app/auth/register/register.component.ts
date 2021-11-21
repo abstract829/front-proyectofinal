@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
               localStorage.setItem('token', resp.token!)
               this.router.navigateByUrl('/ofertas/busqueda')
             }else{
-              console.log('error creando user')
+              console.log(resp)
             }
           })
         }else{

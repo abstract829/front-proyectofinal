@@ -21,7 +21,7 @@
         </div>
         
 
-        <div    *ngIf="oferta.creado_por == user.tipo_user"
+        <div    *ngIf="oferta.creado_por == user.id"
                 class="borrar">
                 <button class="btn btn-primary btn-del" (click)="onBorrar()">Borrar oferta</button>
         </div>

@@ -9,7 +9,7 @@
         </div>
         <div class="jornada ">
             <h4>Jornada</h4>
-            <div class="container">
+            <div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" (change)="toggleJornada(1)" checked>
                     <label class="form-check-label" >
@@ -32,18 +32,24 @@
         </div>
         <div class="salario mt-3">
             <h4>Salario</h4>
-            <div class="container sal">
+            <div class="sal">
 
     
                 <label for="desde">Desde</label>
-                <input type="text" class="form-control" placeholder="0" [(ngModel)]="min">
-
-                <label for="hasta">Hasta</label>
-                <input type="text" class="form-control" placeholder="100.000" [(ngModel)]="max">
+                <input type="number" class="form-control" placeholder="0" [(ngModel)]="min">
 
             </div>
         </div>
-        
+        <div class="categoria mt-3">
+            <h4>Categoria</h4>
+            <div>
+                <select class="form-select" [(ngModel)]="categoria">
+                    <option value="1">Tecnologia</option>
+                    <option value="2">Diseno</option>
+                    <option value="3">Marketing</option>
+                </select>
+            </div>
+        </div>
     </div>
     <div class="ofertas">
         <div>
@@ -52,7 +58,7 @@
                     class="addoferta">
                 <a routerLink="/ofertas/agregar">Agregar oferta</a>
             </div>
-            <div *ngFor="let oferta of ofertas | paginacionOfertas:page:toBuscar:min:max">
+            <div *ngFor="let oferta of ofertass | paginacionOfertas:page:toBuscar">
                 <app-oferta     
                             [oferta]="oferta"></app-oferta>
             </div>
@@ -63,5 +69,4 @@
                     class="butn btn btn-primary" (click)="nextPage()">Siguiente</button>
         </div>
     </div>
-    
 </div>

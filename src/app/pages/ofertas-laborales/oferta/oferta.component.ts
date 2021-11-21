@@ -11,18 +11,10 @@ import { OfertasService } from '../../../services/ofertas.service';
 })
 export class OfertaComponent implements OnInit {
   @Input() oferta!: Oferta
-  get partTime(){
-    return this.os.partTime
-  }
-  get fullTime(){
-    return this.os.fullTime
-  }
-  get horas(){
-    return this.os.horas
-  }
   constructor(private router: Router, private os: OfertasService) { }
 
   ngOnInit(): void {
+
   }
   onClickOferta(){
     this.router.navigateByUrl(`ofertas/info/${this.oferta!.id}`)
