@@ -35,6 +35,7 @@ export class OfertaInfoComponent implements OnInit {
         if(resp.ok){
           this.oferta = resp.ofertas![0]
         }else{
+          console.log('que paso')
         }
       })
     })

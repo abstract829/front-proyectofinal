@@ -14,7 +14,6 @@ export class OfertaComponent implements OnInit {
   constructor(private router: Router, private os: OfertasService) { }
 
   ngOnInit(): void {
-
   }
   onClickOferta(){
     this.router.navigateByUrl(`ofertas/info/${this.oferta!.id}`)

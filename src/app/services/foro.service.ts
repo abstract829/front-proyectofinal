@@ -27,13 +27,20 @@ export class ForoService {
   addComentario(send: any){
     return this.http.post(`${this.url}/foro/addcomentario/`, send)
   }
-  delComentario(send: any){
-    return this.http.post(`${this.url}/foro/delcomentario/`, send)
+  delComentario(id:number){
+    return this.http.delete(`${this.url}/foro/delcomentario/${id}`)
   }
   addForo(foro : Foro){
     return this.http.post(`${this.url}/foro/addforo/`, foro)
   }
   delForo(id: number){
     return this.http.delete(`${this.url}/foro/delforo/${id}`)
+  }
+  addLike(iduser:number,idcomentario:number){
+    return this.http.post(`${this.url}/foro/addlike`, {iduser,idcomentario})
+  }
+  getLikes(id:number){
+    return this.http.get(`${this.url}/foro/likes/${id}`)
+
   }
 }

@@ -20,7 +20,7 @@ export class OfertasService {
   }
 
   getOfertaById(id:number): Observable<OfertasResponse>{
-    return this.http.post<OfertasResponse>(`${this.url}/ofertas/byid`, {id})
+    return this.http.get<OfertasResponse>(`${this.url}/ofertas/byid/${id}`)
   }
 
   addOferta(oferta: Oferta){
@@ -35,6 +35,5 @@ export class OfertasService {
     if(id == 2) this.fullTime = !this.fullTime
     if(id == 3) this.horas = !this.horas
 
-    console.log(this.partTime, this.fullTime, this.horas)
   }
 }

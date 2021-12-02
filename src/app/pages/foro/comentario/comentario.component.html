@@ -3,6 +3,9 @@
     <div class="card-body">
     <p>{{comentario!.comentario}}</p>
     <p class="mt-5">Comentado por : {{user.name}}</p>
+    <p>Likes : {{likes}}</p>
+    <button class="btn btn-primary like" (click)="addLike()" *ngIf="showLike">Like</button>
+    <button class="btn btn-primary like" *ngIf="!showLike" disabled>Liked</button>
     </div>
     <div>
         <button *ngIf="comentario.iduser == logedUser.id"

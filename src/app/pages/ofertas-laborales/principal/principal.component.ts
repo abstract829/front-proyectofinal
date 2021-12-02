@@ -21,16 +21,16 @@ export class PrincipalComponent implements OnInit{
   get ofertass(){
     const filtro = this.ofertas.filter( o => (Number(o.salario_min) >= Number(this.min)) )
     const filtro2 =  filtro.filter( o=> (o.tipo_jornada == 1 && this.fullTime || o.tipo_jornada == 2 && this.partTime || o.tipo_jornada == 3 && this.horas))
-    return filtro2.filter( o => o.categoria == this.categorias)
+    return filtro2.filter( o => {
+      if(this.categoria == 0) return o
+      return o.categoria == this.categoria ? o : null
+    }) 
   }
 
   toBuscar : string = ''
   min : number = 0
   page : number = 0
-  categoria: number = 1
-  get categorias(){
-    return this.categoria
-  }
+  categoria: number = 0
   get user(){
     return this.as.user
   }

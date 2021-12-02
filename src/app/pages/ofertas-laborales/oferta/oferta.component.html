@@ -4,7 +4,7 @@
     <div class="card-body">
       <h5 class="card-title">{{oferta!.title}}</h5>
       <p class="card-text">{{oferta!.empresa}} </p>
-      <p>Publicado el {{oferta!.fecha}}</p>
+      <p>Publicado el {{oferta!.fecha | date}}</p>
     </div>
     <div class="img-empresa">
         <img src="{{oferta.img}}" alt="Logo-empresa">

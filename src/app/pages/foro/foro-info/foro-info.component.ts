@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ForoService } from '../../../services/foro.service';
 import { Foro } from '../../../interfaces/Foro.interface';
@@ -45,12 +45,12 @@ export class ForoInfoComponent implements OnInit {
     }
     this.foroService.addComentario(send).subscribe((resp:any) =>{
       if(resp.ok){
-        window.location.reload()
+        this.ngOnInit()
       }
     })
   }
-  async delForo(){
-    await this.foroService.delForo(this.foro.id!).subscribe((resp:any) => {
+  delForo(){
+    this.foroService.delForo(this.foro.id!).subscribe((resp:any) => {
       if(resp.ok){
         Swal.fire(
           'Listo!',

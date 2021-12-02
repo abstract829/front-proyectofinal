@@ -14,7 +14,7 @@
         <div class="desc">
             <p>{{foro.desc}}</p>
         </div>
-        <p>Publicado en {{foro.fecha}}</p>
+        <p>Publicado en {{foro.fecha | date}}</p>
         <button *ngIf="logedUser.id == foro.creado_por"
                 class="btn btn-primary" (click)="delForo()">Eliminar foro</button>
     </div>
